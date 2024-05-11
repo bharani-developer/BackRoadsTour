@@ -147,6 +147,30 @@ p {
   background: var(--clr-primary-8);
 }
 
+.section {
+  padding: 5rem 0;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-title h2 {
+  text-transform: uppercase;
+}
+.section-title span {
+  color: var(--clr-primary-5);
+}
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
 /*
 =============== 
 Navbar
@@ -193,8 +217,9 @@ Hero
   border-color: var(--clr-white);
 }
 @media screen and (min-width: 768px) {
-  .hero{
-    background: linear-gradient(rgba(44, 174, 186, 0.7),rgba(0, 0, 0, 0.7)),url('../images/main.jpeg') center/cover no-repeat;
+  .hero {
+    background: linear-gradient(rgba(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
+      url("../images/main.jpeg") center/cover no-repeat;
   }
   .hero-banner {
     padding: 0;
@@ -202,17 +227,61 @@ Hero
   .hero-banner p {
     max-width: 45rem;
   }
-  
 }
 /*
 =============== 
 About
-===============
+=============== 
 */
-/* section add to globals */
-/* title add to globals */
-/* section center add to globals */
-
+.about-img,
+.about-info {
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 992px) {
+  .about-center {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .about-img,
+  .about-info {
+    flex: 0 0 calc(50% - 2rem);
+    margin-bottom: 0;
+    align-self: center;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .about-img::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.5rem solid var(--clr-primary-5);
+    top: -1.5rem;
+    left: -1.5rem;
+  }
+}
+.about-img{
+  position: relative;
+}
+.about-photo{
+  position: relative;
+}
+.about-photo img{
+  position: relative;
+  z-index: 2;
+}
+.about-photo::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--clr-primary-5);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 0.25rem;
+  z-index: 1;
+}
 /*
 =============== 
 Services
